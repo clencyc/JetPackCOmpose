@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.hoverable
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,8 +27,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
@@ -134,15 +137,21 @@ fun AlphaMod() {
 fun WeightModifier(){
     Row() {
         Column(
-            Modifier.weight(1f).background(Color.Red)){
+            Modifier
+                .weight(1f)
+                .background(Color.Red)){
             Text(text = "Weight = 1", color = Color.White)
         }
         Column(
-            Modifier.weight(1f).background(Color.Blue)){
+            Modifier
+                .weight(1f)
+                .background(Color.Blue)){
             Text(text = "Weight = 1", color = Color.White)
         }
         Column(
-            Modifier.weight(2f).background(Color.Green)
+            Modifier
+                .weight(2f)
+                .background(Color.Green)
         ) {
             Text(text = "Weight = 2")
         }
@@ -154,7 +163,7 @@ fun WeightModifier(){
         modifier = Modifier
             .padding(20.dp)
             .background(Color.Yellow)
-            .border(2.dp,Color.Red)
+            .border(2.dp, Color.Red)
             .padding(10.dp)
     )
     Text(
@@ -175,7 +184,21 @@ fun WeightModifier(){
             .padding(Dp(15f))
     )
 }
-
+@Preview( showBackground = true, showSystemUi = true, name = "WeightMod")
+@Composable
+fun CustomButton() {
+    Button(
+        onClick = { /* TODO: handle click */ },
+        modifier = Modifier
+            .padding(100.dp)
+            .border(2.dp, SolidColor(Color.Black), RoundedCornerShape(20.dp))
+            .size(110.dp, 50.dp) // width, height
+    ) {
+        Text(
+            text = "Click me",
+            modifier = Modifier.padding(horizontal = 17.dp) // inner padding
+        )
+    }}
 // Text with border
 
 // CLIP MODIFIER

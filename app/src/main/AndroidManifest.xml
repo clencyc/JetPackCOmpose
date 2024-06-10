@@ -13,6 +13,11 @@
         android:theme="@style/Theme.JPCompose"
         tools:targetApi="31">
         <activity
+            android:name=".Imagea"
+            android:exported="false"
+            android:label="@string/title_activity_imagea"
+            android:theme="@style/Theme.JPCompose" />
+        <activity
             android:name=".Modifiers"
             android:exported="false"
             android:label="@string/title_activity_modifiers"
