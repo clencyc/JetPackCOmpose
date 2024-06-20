@@ -32,3 +32,11 @@ val Typography = Typography(
     )
     */
 )
+
+val MyCustomTypography = androidx.compose.material.Typography(
+    body1 = TextStyle(
+        fontSize = 18.sp,
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Normal
+    )
+)
